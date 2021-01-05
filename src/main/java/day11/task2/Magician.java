@@ -1,9 +1,11 @@
 package day11.task2;
 
 public class Magician extends Hero implements MagicAttack, PhysAttack {
+    private double magicAtt;
 
     public Magician() {
-        super(5.0,20.0,0.0,0.8);
+        super(5.0,0.0,0.8);
+        this.magicAtt = 20.0;
     }
 
     @Override
@@ -12,14 +14,13 @@ public class Magician extends Hero implements MagicAttack, PhysAttack {
     }
 
     @Override
-    public void physicalAttack(Hero hero) {
-        hero.reduceHealth(getPhysAtt() - getPhysAtt() * hero.getPhysDef());
-    }
-
-    @Override
     public String toString() {
         return "Magician{" +
                 "health=" + getHealth() +
                 '}';
+    }
+
+    public double getMagicAtt() {
+        return magicAtt;
     }
 }

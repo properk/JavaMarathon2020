@@ -7,12 +7,10 @@ public abstract class Hero {
     private double physDef;
     private double magicDef;
     private double physAtt;
-    private double magicAtt;
 
-    public Hero(double physAtt, double magicAtt, double physDef, double magicDef) {
+    public Hero(double physAtt, double physDef, double magicDef) {
         this.health = MAX_HEALTH;
         this.physAtt = physAtt;
-        this.magicAtt = magicAtt;
         this.physDef = physDef;
         this.magicDef = magicDef;
     }
@@ -31,10 +29,6 @@ public abstract class Hero {
 
     public double getPhysAtt() {
         return physAtt;
-    }
-
-    public double getMagicAtt() {
-        return magicAtt;
     }
 
     public static double getMaxHealth() {
@@ -57,5 +51,9 @@ public abstract class Hero {
         if (this.health <= MIN_HEALTH) {
             setHealth(MIN_HEALTH);
         }
+    }
+
+    public void physicalAttack(Hero hero) {
+        hero.reduceHealth(getPhysAtt() - getPhysAtt() * hero.getPhysDef());
     }
 }
