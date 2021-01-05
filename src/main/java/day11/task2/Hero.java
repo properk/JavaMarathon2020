@@ -1,8 +1,8 @@
 package day11.task2;
 
 public abstract class Hero {
-    private static final double MAX_HEALTH = 100;
-    private static final double MIN_HEALTH = 0;
+    public static final double MAX_HEALTH = 100;
+    public static final double MIN_HEALTH = 0;
     private double health;
     private double physDef;
     private double magicDef;
@@ -29,10 +29,6 @@ public abstract class Hero {
 
     public double getPhysAtt() {
         return physAtt;
-    }
-
-    public static double getMaxHealth() {
-        return MAX_HEALTH;
     }
 
     public void setHealth(double health) {
